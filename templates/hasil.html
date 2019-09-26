@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Cari Digimon Favorit Kamu</title>
+    <style>
+    body {
+        background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/20be7921-61f9-4ec3-a350-94969f5f6abf/d5y3zvx-25cbdadf-947a-4841-b6f6-968ad8acc3f4.jpg/v1/fill/w_800,h_600,q_75,strp/test__digimon_adventure_background_style_by_nelanequin_d5y3zvx-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvMjBiZTc5MjEtNjFmOS00ZWMzLWEzNTAtOTQ5NjlmNWY2YWJmXC9kNXkzenZ4LTI1Y2JkYWRmLTk0N2EtNDg0MS1iNmY2LTk2OGFkOGFjYzNmNC5qcGciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.VXUVjEwU2ckOjjw5LTCR110-n9vUdgdQBes6fHrmQIg);
+        background-position: center;
+        background-size: cover ;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h2>Digimon Favoritmu</h2>
+    <img src="{{favorit['Pic']}}" alt="Gambar digi"><br>
+    Nama : {{favorit['Nama'].capitalize()}}
+    Stage : {{favorit['Stage']}}
+    Type : {{favorit['Type']}}
+    Attribute : {{favorit['attribute']}}<br>
+    <h2>Rekomendasi Digimon dari kami</h2>
+    <ul>
+        {% for item in rekomen %}
+        <img src="{{item['gambar']}}" alt="Gambar digi"><br>
+        <h4>Nama : {{ item['Nama'] }}</h4><br>
+        Stage : {{ item['stage'] }}
+        Type : {{ item['Type'] }}
+        Attribute : {{ item['attribute'] }}<br>
+        {% endfor %}
+    </ul>
+    <form action="http://localhost:5000/">
+        <button type="submit">Kembali</button>
+    </form>
+</center>
+
+</body>
+</html>
